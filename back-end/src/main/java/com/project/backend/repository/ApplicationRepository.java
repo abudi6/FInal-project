@@ -12,8 +12,8 @@ import java.util.List;
 public interface ApplicationRepository extends CrudRepository<Application, Integer> {
     @Query("SELECT a FROM Application a WHERE CONCAT(a.applicant.fullName) LIKE %:applicant%")
     List<Application> findByApplicantName(@Param("applicant") String applicantName);
-    @Query("SELECT a FROM Application a WHERE CONCAT(a.dog.name) LIKE %:dog%")
-    List<Application> findByDogName(@Param("dog") String dogName);
+    @Query("SELECT a FROM Application a WHERE CONCAT(a.car.name) LIKE %:car%")
+    List<Application> findByCarName(@Param("car") String carName);
     @Query("SELECT a FROM Application a WHERE a.applicant.id LIKE %:id%")
     List<Application> findByApplicantId(@Param("id") int id);
 }

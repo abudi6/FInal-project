@@ -11,7 +11,7 @@ import java.sql.Statement;
 
 public class ApplicationIdGenerator implements IdentifierGenerator {
 
-    // Generates ID number for new dog using the next number after the latest ID registered
+    // Generates ID number for new car using the next number after the latest ID registered
     @Override
     public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
         Connection connection = session.connection();

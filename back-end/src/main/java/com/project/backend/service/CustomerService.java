@@ -3,7 +3,7 @@ package com.project.backend.service;
 import com.project.backend.model.Admin;
 import com.project.backend.model.Customer;
 import com.project.backend.model.Application;
-import com.project.backend.repository.AdopterRepository;
+import com.project.backend.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,20 +12,20 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AdopterService {
+public class CustomerService {
     @Autowired
-    AdopterRepository adopterRepository;
+    CustomerRepository customerRepository;
 
     @Autowired
     ApplicationService applicationService;
 
-    public Customer registerAdopter(Customer adopter){
-        adopter.setFullName();
-        adopter.setRegisteredDate(new Date());
-        return adopterRepository.save(adopter);
+    public Customer registerCustomer(Customer customer){
+        customer.setFullName();
+        customer.setRegisteredDate(new Date());
+        return customerRepository.save(customer);
     }
-    public Customer updateAdopter(int adopterId, Customer update){
-        Optional<Customer> existingOptional = adopterRepository.findById(adopterId);
+    public Customer updateCustomer(int customerId, Customer update){
+        Optional<Customer> existingOptional = customerRepository.findById(customerId);
 
         if(existingOptional.isPresent()){
             Customer existing = existingOptional.get();
@@ -52,15 +52,15 @@ public class AdopterService {
                 existing.setHomeAddress(update.getHomeAddress());
             }
             existing.setFullName();
-            return adopterRepository.save(existing);
+            return customerRepository.save(existing);
         } else{
             return null;
         }
     }
-    public void deleteAdopter(int adopterId) {
-        Customer adopter = adopterRepository.findById(adopterId).orElse(null);
+    public void deleteCustomer(int customerId) {
+        Customer customer = customerRepository.findById(customerId).orElse(null);
 
-        List<Application> applications = adopter.getApplications();
+        List<Application> applications = customer.getApplications();
 
         // Delete each associated application
         if(applications != null && !applications.isEmpty()){
@@ -69,24 +69,24 @@ public class AdopterService {
             }
         }
 
-        adopterRepository.deleteById(adopterId);
+        customerRepository.deleteById(customerId);
 
     }
-    public List<Customer> getAllAdopters(){ return (List<Customer>) adopterRepository.findAll(); }
-    public Customer getAdopterById(int adopterId) {
-        return adopterRepository.findById(adopterId).orElse(null);
+    public List<Customer> getAllCustomers(){ return (List<Customer>) customerRepository.findAll(); }
+    public Customer getCustomerById(int customerId) {
+        return customerRepository.findById(customerId).orElse(null);
     }
-    public List<Customer> getAdoptersByName(String adopterName){
-        return adopterRepository.findByName(adopterName);
+    public List<Customer> getCustomersByName(String customerName){
+        return customerRepository.findByName(customerName);
     }
-    public List<Customer> getAdoptersByEmail(String email) { return adopterRepository.findByEmail(email); }
-    public List<Customer> getAdoptersByPhoneNumber(String phoneNumber) { return adopterRepository.findByPhoneNumber(phoneNumber); }
+    public List<Customer> getCustomersByEmail(String email) { return customerRepository.findByEmail(email); }
+    public List<Customer> getCustomersByPhoneNumber(String phoneNumber) { return customerRepository.findByPhoneNumber(phoneNumber); }
 
     public Customer getUserByEmail(String email) {
-        return adopterRepository.findUserByEmail(email);
+        return customerRepository.findUserByEmail(email);
     }
 
     public Customer getUserByPassword(String password){
-        return adopterRepository.findUserByPassword(password);
+        return customerRepository.findUserByPassword(password);
     }
 }

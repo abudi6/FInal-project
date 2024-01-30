@@ -3,7 +3,7 @@ package com.project.backend.service;
 import com.project.backend.model.Customer;
 import com.project.backend.model.Application;
 import com.project.backend.model.Car;
-import com.project.backend.repository.AdopterRepository;
+import com.project.backend.repository.CustomerRepository;
 import com.project.backend.repository.ApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,18 +19,18 @@ public class ApplicationService {
     @Autowired
     private ApplicationRepository applicationRepository;
     @Autowired
-    private AdopterService adopterService;
+    private CustomerService customerService;
     @Autowired
-    private DogService dogService;
+    private CarService carService;
     public Application createApplication(Application application) {
-        Customer applicant = adopterService.getAdopterById(application.getApplicant().getId());
-        Car dog = dogService.getDogById(application.getDog().getId());
+        Customer applicant = customerService.getCustomerById(application.getApplicant().getId());
+        Car car = carService.getCarById(application.getCar().getId());
 
         application.setStatus("Submitted");
         application.setApplicant(applicant);
 
-        dog.setAdoptionStatus("Reserved");
-        application.setDog(dog);
+        car.setStatus("Reserved");
+        application.setCar(car);
 
         LocalDateTime currentDateTime = LocalDateTime.now();
         application.setSubmittedDate(currentDateTime);
@@ -40,7 +40,7 @@ public class ApplicationService {
     public Application updateApplication(int applicationId, Application update){
         Optional<Application> existingOptional = applicationRepository.findById(applicationId);
         Application application = applicationRepository.findById(applicationId).orElse(null);
-        Car dog = dogService.getDogById(application.getDog().getId());
+        Car car = carService.getCarById(application.getCar().getId());
 
         if(existingOptional.isPresent()){
             Application existing = existingOptional.get();
@@ -57,24 +57,24 @@ public class ApplicationService {
             if (update.getReviewDate()!=null){
                 existing.setReviewDate(update.getReviewDate());
             } else if (update.getStatus().trim().equalsIgnoreCase("Under Review")){
-                dog.setAdoptionStatus("Reserved");
+                car.setStatus("Reserved");
                 LocalDateTime currentDateTime = LocalDateTime.now();
                 existing.setReviewDate(currentDateTime);
             }
             if (update.getApprovalDate()!=null){
                 existing.setApprovalDate(update.getApprovalDate());
             } else if (update.getStatus().trim().equalsIgnoreCase("Approved")){
-                dog.setAdoptionStatus("Adopted");
+                car.setStatus("Rented");
                 LocalDateTime currentDateTime = LocalDateTime.now();
                 existing.setApprovalDate(currentDateTime);
             }
             if (update.getApplicant()!=null){
                 existing.setApplicant(update.getApplicant());
             }
-            if (update.getDog()!=null){
-                existing.setDog(update.getDog());
+            if (update.getCar()!=null){
+                existing.setCar(update.getCar());
             }
-            existing.setDog(dog);
+            existing.setCar(car);
             return applicationRepository.save(existing);
         }else{
             return null;
@@ -93,8 +93,8 @@ public class ApplicationService {
         return applicationRepository.findByApplicantName(applicantName);
     }
 
-    public List<Application> searchByDogName(String dogName) {
-        return applicationRepository.findByDogName(dogName);
+    public List<Application> searchByCarName(String carName) {
+        return applicationRepository.findByCarName(carName);
     }
 
     public List<Application> searchByApplicantId(int id) {
@@ -103,9 +103,9 @@ public class ApplicationService {
 
     public void deleteApplication(int applicationId){
         Application application = applicationRepository.findById(applicationId).orElse(null);
-        Car dog = dogService.getDogById(application.getDog().getId());
+        Car car = carService.getCarById(application.getCar().getId());
 
-        dog.setAdoptionStatus("Open");
+        car.setStatus("Open");
 
         applicationRepository.deleteById(applicationId);
     }

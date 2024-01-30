@@ -37,7 +37,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(int id, String name, String displayImage, String brand, Date manuDate, String age, String gender, String color, String size, String status, String description, Date registeredDate, Application application) {
+    public Car(int id, String name, String displayImage, String brand, Date manuDate, String age, String color, String size, String status, String description, Date registeredDate, Application application) {
         this.id = id;
         this.name = name;
         this.displayImage = displayImage;

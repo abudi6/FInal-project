@@ -34,11 +34,11 @@ public class ApplicationController {
         applicationsByApplicant = applicationService.searchByApplicantName(name);
         return applicationsByApplicant;
     }
-    @GetMapping("/get-application/dog/{name}")
-    public List<Application> getApplicationsByDog(@PathVariable String name){
-        List<Application> applicationsByDog = new ArrayList<>();
-        applicationsByDog = applicationService.searchByDogName(name);
-        return applicationsByDog;
+    @GetMapping("/get-application/car/{name}")
+    public List<Application> getApplicationsByCar(@PathVariable String name){
+        List<Application> applicationsByCar = new ArrayList<>();
+        applicationsByCar = applicationService.searchByCarName(name);
+        return applicationsByCar;
     }
     @GetMapping("/get-application/applicant-id/{id}")
     public List<Application> getApplicationsByApplicantId(@PathVariable int id){

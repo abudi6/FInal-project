@@ -5,7 +5,7 @@ import com.project.backend.model.Customer;
 import com.project.backend.model.LoginRequest;
 import com.project.backend.model.LoginResponse;
 import com.project.backend.service.AdminService;
-import com.project.backend.service.AdopterService;
+import com.project.backend.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 public class AuthenticateController {
     @Autowired
-    private AdopterService adopterService;
+    private CustomerService customerService;
 
     @Autowired
     private AdminService adminService;
@@ -35,9 +35,9 @@ public class AuthenticateController {
         }
     }
 
-    @PostMapping("/api/adopter/login")
-    public ResponseEntity<LoginResponse> loginAsAdopter(@RequestBody LoginRequest user) {
-        Customer confirmUser = adopterService.getUserByEmail(user.getEmail());
+    @PostMapping("/api/customer/login")
+    public ResponseEntity<LoginResponse> loginAsCustomer(@RequestBody LoginRequest user) {
+        Customer confirmUser = customerService.getUserByEmail(user.getEmail());
 
         if (confirmUser != null && confirmUser.getPassword().equals(user.getPassword())) {
             int userId = confirmUser.getId();

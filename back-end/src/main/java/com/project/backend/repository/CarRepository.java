@@ -9,12 +9,14 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface DogRepository extends CrudRepository<Car, Integer> {
-    @Query("SELECT a FROM Dog a WHERE CONCAT(a.name) LIKE %:name%")
+public interface CarRepository extends CrudRepository<Car, Integer> {
+    @Query("SELECT a FROM Car a WHERE CONCAT(a.name) LIKE %:name%")
     List<Car> findByName(@Param("name") String name);
 
-    List<Car> findByGender(@Param("gender") String gender);
+    List<Car> findByColor(@Param("color") String color);
 
-    @Query("SELECT a FROM Dog a WHERE CONCAT(a.adoptionStatus) LIKE %:adoptionStatus%")
-    List<Car> findByAdoptionStatus(@Param("adoptionStatus")String adoptionStatus);
+    List<Car> findByBrand(@Param("brand") String brand);
+
+    @Query("SELECT a FROM Car a WHERE CONCAT(a.status) LIKE %:status%")
+    List<Car> findByStatus(@Param("status")String status);
 }
