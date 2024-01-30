@@ -1,9 +1,5 @@
-# IT192 Term-end Project Requirement: Dog Adoption Management System
-
+# IT128 Term-end Project Requirement: 
 ## Developers
 
 * Azzouni, Abdulrahman
-* Nitta, Kennichi
-* Rivadenera, Johann Zeke
-* Resurreccion, Justin Carl
-* Pineda, Andrea May
+
