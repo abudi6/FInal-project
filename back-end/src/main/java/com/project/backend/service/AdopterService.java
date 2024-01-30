@@ -1,7 +1,7 @@
 package com.project.backend.service;
 
 import com.project.backend.model.Admin;
-import com.project.backend.model.Adopter;
+import com.project.backend.model.Customer;
 import com.project.backend.model.Application;
 import com.project.backend.repository.AdopterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +19,16 @@ public class AdopterService {
     @Autowired
     ApplicationService applicationService;
 
-    public Adopter registerAdopter(Adopter adopter){
+    public Customer registerAdopter(Customer adopter){
         adopter.setFullName();
         adopter.setRegisteredDate(new Date());
         return adopterRepository.save(adopter);
     }
-    public Adopter updateAdopter(int adopterId, Adopter update){
-        Optional<Adopter> existingOptional = adopterRepository.findById(adopterId);
+    public Customer updateAdopter(int adopterId, Customer update){
+        Optional<Customer> existingOptional = adopterRepository.findById(adopterId);
 
         if(existingOptional.isPresent()){
-            Adopter existing = existingOptional.get();
+            Customer existing = existingOptional.get();
 
             if(update.getFirstName()!=null){
                 existing.setFirstName(update.getFirstName());
@@ -58,7 +58,7 @@ public class AdopterService {
         }
     }
     public void deleteAdopter(int adopterId) {
-        Adopter adopter = adopterRepository.findById(adopterId).orElse(null);
+        Customer adopter = adopterRepository.findById(adopterId).orElse(null);
 
         List<Application> applications = adopter.getApplications();
 
@@ -72,21 +72,21 @@ public class AdopterService {
         adopterRepository.deleteById(adopterId);
 
     }
-    public List<Adopter> getAllAdopters(){ return (List<Adopter>) adopterRepository.findAll(); }
-    public Adopter getAdopterById(int adopterId) {
+    public List<Customer> getAllAdopters(){ return (List<Customer>) adopterRepository.findAll(); }
+    public Customer getAdopterById(int adopterId) {
         return adopterRepository.findById(adopterId).orElse(null);
     }
-    public List<Adopter> getAdoptersByName(String adopterName){
+    public List<Customer> getAdoptersByName(String adopterName){
         return adopterRepository.findByName(adopterName);
     }
-    public List<Adopter> getAdoptersByEmail(String email) { return adopterRepository.findByEmail(email); }
-    public List<Adopter> getAdoptersByPhoneNumber(String phoneNumber) { return adopterRepository.findByPhoneNumber(phoneNumber); }
+    public List<Customer> getAdoptersByEmail(String email) { return adopterRepository.findByEmail(email); }
+    public List<Customer> getAdoptersByPhoneNumber(String phoneNumber) { return adopterRepository.findByPhoneNumber(phoneNumber); }
 
-    public Adopter getUserByEmail(String email) {
+    public Customer getUserByEmail(String email) {
         return adopterRepository.findUserByEmail(email);
     }
 
-    public Adopter getUserByPassword(String password){
+    public Customer getUserByPassword(String password){
         return adopterRepository.findUserByPassword(password);
     }
 }

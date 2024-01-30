@@ -10,45 +10,43 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
-@Table(name="dog")
-public class Dog {
+@Table(name="car")
+public class Car {
     @Id
     @GeneratedValue(generator = "custom-id", strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.DogIdGenerator")
+    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.CarIdGenerator")
     private int id;
     private String name;
     private String displayImage;
-    private String breed;
+    private String brand;
     @Temporal(TemporalType.DATE)
-    private Date birthDate;
+    private Date manuDate;
     private String age;
-    private String gender;
     private String color;
     private String size;
-    private String adoptionStatus; // Default value
+    private String status; // Default value
     @Type(type = "text")
     private String description;
     @Temporal(TemporalType.DATE)
     private Date registeredDate;
 
-    @OneToOne(mappedBy = "dog")
+    @OneToOne(mappedBy = "car")
     @JsonIgnore
     private Application application;
 
-    public Dog() {
+    public Car() {
     }
 
-    public Dog(int id, String name, String displayImage, String breed, Date birthDate, String age, String gender, String color, String size, String adoptionStatus, String description, Date registeredDate, Application application) {
+    public Car(int id, String name, String displayImage, String brand, Date manuDate, String age, String gender, String color, String size, String status, String description, Date registeredDate, Application application) {
         this.id = id;
         this.name = name;
         this.displayImage = displayImage;
-        this.breed = breed;
-        this.birthDate = birthDate;
+        this.brand = brand;
+        this.manuDate = manuDate;
         this.age = age;
-        this.gender = gender;
         this.color = color;
         this.size = size;
-        this.adoptionStatus = adoptionStatus;
+        this.status = status;
         this.description = description;
         this.registeredDate = registeredDate;
         this.application = application;
@@ -78,42 +76,35 @@ public class Dog {
         this.displayImage = displayImage;
     }
 
-    public String getBreed() {
-        return breed;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setBreed(String breed) {
-        this.breed = breed;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Date getManuDate() {
+        return manuDate;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setManuDate(Date manuDate) {
+        this.manuDate = manuDate;
     }
 
     public String getAge() {
         return age;
     }
 
-    public void setAge(Date birthDate) {
-        if (birthDate != null) {
-            this.birthDate = birthDate;
+    public void setAge(Date manuDate) {
+        if (manuDate != null) {
+            this.manuDate = manuDate;
 
-            int computedAge = calculateAge(this.birthDate);
+            int computedAge = calculateAge(this.manuDate);
             this.age = String.valueOf(computedAge);
         }
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 
     public String getColor() {
         return color;
@@ -131,12 +122,12 @@ public class Dog {
         this.size = size;
     }
 
-    public String getAdoptionStatus() {
-        return adoptionStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setAdoptionStatus(String adoptionStatus) {
-        this.adoptionStatus = adoptionStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getDescription() {
@@ -163,9 +154,9 @@ public class Dog {
         this.registeredDate = registeredDate;
     }
 
-    private int calculateAge(Date birthDate) {
+    private int calculateAge(Date manuDate) {
         Calendar birthCalendar = Calendar.getInstance();
-        birthCalendar.setTime(birthDate);
+        birthCalendar.setTime(manuDate);
 
         Calendar currentCalendar = Calendar.getInstance();
 

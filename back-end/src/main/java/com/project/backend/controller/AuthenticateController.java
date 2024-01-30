@@ -1,7 +1,7 @@
 package com.project.backend.controller;
 
 import com.project.backend.model.Admin;
-import com.project.backend.model.Adopter;
+import com.project.backend.model.Customer;
 import com.project.backend.model.LoginRequest;
 import com.project.backend.model.LoginResponse;
 import com.project.backend.service.AdminService;
@@ -37,7 +37,7 @@ public class AuthenticateController {
 
     @PostMapping("/api/adopter/login")
     public ResponseEntity<LoginResponse> loginAsAdopter(@RequestBody LoginRequest user) {
-        Adopter confirmUser = adopterService.getUserByEmail(user.getEmail());
+        Customer confirmUser = adopterService.getUserByEmail(user.getEmail());
 
         if (confirmUser != null && confirmUser.getPassword().equals(user.getPassword())) {
             int userId = confirmUser.getId();

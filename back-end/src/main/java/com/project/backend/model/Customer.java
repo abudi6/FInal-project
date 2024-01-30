@@ -9,11 +9,11 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="adopter")
-public class Adopter {
+@Table(name="customer")
+public class Customer {
     @Id
     @GeneratedValue(generator = "custom-id", strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.AdopterIdGenerator")
+    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.CustomerIdGenerator")
     private int id;
     private String firstName;
     private String lastName;
@@ -30,7 +30,7 @@ public class Adopter {
     @JsonIgnore
     private List<Application> applications;
 
-    public Adopter(int id, String firstName, String lastName, String fullName, String displayImage, String email, String password, String phoneNumber, String homeAddress, Date registeredDate, List<Application> applications) {
+    public Customer(int id, String firstName, String lastName, String fullName, String displayImage, String email, String password, String phoneNumber, String homeAddress, Date registeredDate, List<Application> applications) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -44,7 +44,7 @@ public class Adopter {
         this.applications = applications;
     }
 
-    public Adopter() {
+    public Customer() {
     }
 
     public int getId() {

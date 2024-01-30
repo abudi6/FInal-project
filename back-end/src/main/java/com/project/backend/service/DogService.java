@@ -1,8 +1,8 @@
 package com.project.backend.service;
 
-import com.project.backend.model.Adopter;
+import com.project.backend.model.Customer;
 import com.project.backend.model.Application;
-import com.project.backend.model.Dog;
+import com.project.backend.model.Car;
 import com.project.backend.repository.DogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,18 +21,18 @@ public class DogService {
     @Autowired
     ApplicationService applicationService;
 
-    public Dog registerDog(Dog dog){
+    public Car registerDog(Car dog){
         dog.setRegisteredDate(new Date());
         dog.setAge(dog.getBirthDate());
         dog.setAdoptionStatus("Open");
         return dogRepository.save(dog);
     }
 
-    public Dog updateDog(int dogId, Dog update){
-        Optional<Dog> existingOptional = dogRepository.findById(dogId);
+    public Car updateDog(int dogId, Car update){
+        Optional<Car> existingOptional = dogRepository.findById(dogId);
 
         if(existingOptional.isPresent()){
-            Dog existing = existingOptional.get();
+            Car existing = existingOptional.get();
 
             if(update.getName()!=null){
                 existing.setName(update.getName());
@@ -73,7 +73,7 @@ public class DogService {
     }
 
     public void deleteDog(int dogId) {
-        Dog dog = dogRepository.findById(dogId).orElse(null);
+        Car dog = dogRepository.findById(dogId).orElse(null);
 
         Application application = dog.getApplication();
 
@@ -84,21 +84,21 @@ public class DogService {
         dogRepository.deleteById(dogId);
     }
 
-    public List<Dog> getAllDogs(){ return (List<Dog>) dogRepository.findAll(); }
+    public List<Car> getAllDogs(){ return (List<Car>) dogRepository.findAll(); }
 
-    public Dog getDogById(int id) {
+    public Car getDogById(int id) {
         return dogRepository.findById(id).orElse(null);
     }
 
-    public List<Dog> getDogsByName(String name) {
+    public List<Car> getDogsByName(String name) {
         return dogRepository.findByName(name);
     }
 
-    public List<Dog> getDogsByGender(String gender) {
+    public List<Car> getDogsByGender(String gender) {
         return dogRepository.findByGender(gender);
     }
 
-    public List<Dog> getDogsByAdoptionStatus(String adoptionStatus) {
+    public List<Car> getDogsByAdoptionStatus(String adoptionStatus) {
         return dogRepository.findByAdoptionStatus(adoptionStatus);
     }
 

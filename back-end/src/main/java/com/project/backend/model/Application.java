@@ -21,23 +21,23 @@ public class Application {
 
     @ManyToOne
     @JoinColumn(name = "applicant_id")
-    private Adopter applicant;
+    private Customer applicant;
 
     @OneToOne
-    @JoinColumn(name = "dog_id")
-    private Dog dog;
+    @JoinColumn(name = "car_id")
+    private Car car;
 
     public Application() {
     }
 
-    public Application(int id, String status, LocalDateTime submittedDate, LocalDateTime reviewDate, LocalDateTime approvalDate, Adopter applicant, Dog dog) {
+    public Application(int id, String status, LocalDateTime submittedDate, LocalDateTime reviewDate, LocalDateTime approvalDate, Customer applicant, Car car) {
         this.id = id;
         this.status = status;
         this.submittedDate = submittedDate;
         this.reviewDate = reviewDate;
         this.approvalDate = approvalDate;
         this.applicant = applicant;
-        this.dog = dog;
+        this.car = car;
     }
 
     public int getId() {
@@ -80,19 +80,19 @@ public class Application {
         this.approvalDate = approvalDate;
     }
 
-    public Adopter getApplicant() {
+    public Customer getApplicant() {
         return applicant;
     }
 
-    public void setApplicant(Adopter applicant) {
+    public void setApplicant(Customer applicant) {
         this.applicant = applicant;
     }
 
-    public Dog getDog() {
-        return dog;
+    public Car getCar() {
+        return car;
     }
 
-    public void setDog(Dog dog) {
-        this.dog = dog;
+    public void setCar(Car car) {
+        this.car = car;
     }
 }

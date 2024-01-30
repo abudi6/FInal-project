@@ -1,8 +1,8 @@
 package com.project.backend.service;
 
-import com.project.backend.model.Adopter;
+import com.project.backend.model.Customer;
 import com.project.backend.model.Application;
-import com.project.backend.model.Dog;
+import com.project.backend.model.Car;
 import com.project.backend.repository.AdopterRepository;
 import com.project.backend.repository.ApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +23,8 @@ public class ApplicationService {
     @Autowired
     private DogService dogService;
     public Application createApplication(Application application) {
-        Adopter applicant = adopterService.getAdopterById(application.getApplicant().getId());
-        Dog dog = dogService.getDogById(application.getDog().getId());
+        Customer applicant = adopterService.getAdopterById(application.getApplicant().getId());
+        Car dog = dogService.getDogById(application.getDog().getId());
 
         application.setStatus("Submitted");
         application.setApplicant(applicant);
@@ -40,7 +40,7 @@ public class ApplicationService {
     public Application updateApplication(int applicationId, Application update){
         Optional<Application> existingOptional = applicationRepository.findById(applicationId);
         Application application = applicationRepository.findById(applicationId).orElse(null);
-        Dog dog = dogService.getDogById(application.getDog().getId());
+        Car dog = dogService.getDogById(application.getDog().getId());
 
         if(existingOptional.isPresent()){
             Application existing = existingOptional.get();
@@ -103,7 +103,7 @@ public class ApplicationService {
 
     public void deleteApplication(int applicationId){
         Application application = applicationRepository.findById(applicationId).orElse(null);
-        Dog dog = dogService.getDogById(application.getDog().getId());
+        Car dog = dogService.getDogById(application.getDog().getId());
 
         dog.setAdoptionStatus("Open");
 
