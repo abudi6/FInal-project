@@ -5,11 +5,11 @@
     </div>
     <div class="left-align">
       <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" [(ngModel)]="adopter.firstName" required>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="customer.firstName" required>
     </div>
     <div class="left-align">
       <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" [(ngModel)]="adopter.lastName" required>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="customer.lastName" required>
     </div>
     <div class="left-align">
       <label for="displayImage" style = "margin-top: 10px;">Display Image:</label>
@@ -17,19 +17,19 @@
     </div>
     <div class="left-align" >
       <label for="email" style = "margin-top: 10px;">Email:</label>
-      <input type="text" id="email" name="email" [(ngModel)]="adopter.email" required>
+      <input type="text" id="email" name="email" [(ngModel)]="customer.email" required>
     </div>
     <div class="left-align">
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="adopter.password" required>
+      <input type="password" id="password" name="password" [(ngModel)]="customer.password" required>
     </div>
     <div class="left-align">
       <label for="phoneNumber">Phone Number:</label>
-      <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="adopter.phoneNumber" required>
+      <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="customer.phoneNumber" required>
     </div>
     <div class="left-align">
       <label for="homeAddress">Home Address:</label>
-      <input type="text" id="homeAddress" name="homeAddress" [(ngModel)]="adopter.homeAddress" required>
+      <input type="text" id="homeAddress" name="homeAddress" [(ngModel)]="customer.homeAddress" required>
     </div>
     <div class="center-align">
       <button type="submit" (click)="onRegisterSubmit()">Register</button>

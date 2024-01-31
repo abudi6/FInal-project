@@ -1,0 +1,41 @@
+<div class="header-img">
+  <img src="assets/icons/MANAGE DOG DETAILS.png" style = "margin:25px;height:30px;">
+</div>
+<div class="box-container">
+  <h2></h2>
+  <div class="car-details">
+    <img [src]="'assets/car-displayimages/' + selectedCar.displayImage" alt="{{ selectedCar.name }}" class="car-image">
+    <div class="car-info">
+      <p>
+        <strong>Name:</strong> <input [(ngModel)]="selectedCar.name" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Brand:</strong> <input [(ngModel)]="selectedCar.brand" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Age:</strong> <input [(ngModel)]="selectedCar.age" [disabled]="!editMode" style="width: 100%;" /> months
+      </p>
+      <p>
+        <strong>Manufacturing Date:</strong> <input type="date" [(ngModel)]="selectedCar.manuDate" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Display Image:</strong> <input type="file" [(ngModel)]="newDisplayImage" (change)="onFileSelected($event)" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Color:</strong> <input [(ngModel)]="selectedCar.color" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Size:</strong> <input [(ngModel)]="selectedCar.size" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Description:</strong> <textarea [(ngModel)]="selectedCar.description" [disabled]="!editMode" style="width: 100%;"></textarea>
+      </p>
+      <div style="text-align: center;">
+        <button *ngIf="editMode" (click)="saveChanges()">Save Changes</button>
+        <button (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+        <button (click)="deleteRecord()">Delete</button>
+        <button routerLink="/manage-cars">Back</button>
+      </div>
+    </div>
+  </div>
+</div>

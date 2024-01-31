@@ -1,0 +1,45 @@
+<div class="header-img">
+  <img src="assets/icons/ADD CAR.png" style = "margin:25px;height:30px;">
+</div>
+<div class="box-container">
+  <form (ngSubmit)="onSubmit()" #carForm="ngForm" class="car-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="car.name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="displayImage">Display Image:</label>
+      <input type="file" id="displayImage" name="displayImage" (change)="onFileSelected($event)" [(ngModel)]="car.displayImage" accept="image/*" required>
+    </div>
+
+    <div class="form-group">
+      <label for="brand">Brand:</label>
+      <input type="text" id="brand" name="brand" [(ngModel)]="car.brand" required>
+    </div>
+
+    <div class="form-group">
+      <label for="manuDate">Manufacturing Date:</label>
+      <input type="date" id="manuDate" name="manuDate" [(ngModel)]="car.manuDate" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="color">Color:</label>
+      <input type="text" id="color" name="color" [(ngModel)]="car.color" required>
+    </div>
+
+    <div class="form-group">
+      <label for="size">Size:</label>
+      <input type="text" id="size" name="size" [(ngModel)]="car.size" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="car.description" required></textarea>
+    </div>
+
+    <button type="submit" [disabled]="carForm.invalid">Add Car</button> <button routerLink="/manage-cars">Back</button>
+    
+  </form>
+</div>

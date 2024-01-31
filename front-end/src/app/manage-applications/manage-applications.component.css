@@ -54,31 +54,31 @@
     margin-bottom: 200px;
   }
   
-  .dog-table {
+  .car-table {
     border-collapse: collapse;
     width: 100%; /* Adjust the width as needed */
   }
   
-  .dog-table th,
-  .dog-table td {
+  .car-table th,
+  .car-table td {
     padding: 10px;
     font-family: 'Montserrat', sans-serif;
   }
   
-  .dog-table th {
+  .car-table th {
     background-color: #C05E4B;
     color: #fff;
   }
   
-  .dog-table td {
+  .car-table td {
     text-align: left; /* Align table data to the left */
   }
   
-  .dog-table tbody tr {
+  .car-table tbody tr {
     cursor: pointer;
   }
   
-  .dog-table tbody tr:hover {
+  .car-table tbody tr:hover {
     background-color: #eee;
   }
   

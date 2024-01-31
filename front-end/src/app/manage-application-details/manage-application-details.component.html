@@ -3,13 +3,13 @@
 </div>
 
 <div class="details-container">
-  <div class="adopter-details box-container">
+  <div class="customer-details box-container">
     <p style="text-align: center;">
-      <img [src]="'assets/user-displayimages/' + applicant.displayImage" alt="{{ applicant.fullName }}" class="adopter-image"
+      <img [src]="'assets/user-displayimages/' + applicant.displayImage" alt="{{ applicant.fullName }}" class="customer-image"
         style="height: 200px; width: 60%; border-radius: 20px;">
     </p>
-    <div class="adopter-info">
-      <h2>Adopter Details</h2>
+    <div class="customer-info">
+      <h2>Customer Details</h2>
       <p>
         <strong>Name:</strong> {{applicant.fullName}}
       </p>
@@ -28,39 +28,39 @@
     </div>
   </div>
 
-  <div class="dog-details box-container">
+  <div class="car-details box-container">
     <p style="text-align: center;">
-      <img [src]="'assets/dog-displayimages/' + dog.displayImage" alt="{{ dog.name }}" class="dog-image"
+      <img [src]="'assets/car-displayimages/' + car.displayImage" alt="{{ car.name }}" class="car-image"
         style="height: 200px; width: 90%; border-radius: 20px;">
     </p>
-    <div class="dog-info">
-      <h2>Dog Details</h2>
+    <div class="car-info">
+      <h2>Car Details</h2>
       <p>
-        <strong>Name:</strong> {{dog.name}}
+        <strong>Name:</strong> {{car.name}}
       </p>
       <p>
-        <strong>Gender:</strong> {{dog.gender}}
+        <strong>Gender:</strong> {{car.gender}}
       </p>
       <p>
-        <strong>Breed:</strong> {{dog.breed}}
+        <strong>Breed:</strong> {{car.breed}}
       </p>
       <p>
-        <strong>Age:</strong> {{dog.age}} months
+        <strong>Age:</strong> {{car.age}} months
       </p>
       <p>
-        <strong>Adoption Status:</strong> {{dog.adoptionStatus}}
+        <strong>Adoption Status:</strong> {{car.adoptionStatus}}
       </p>
       <p>
-        <strong>Birth Date:</strong> {{dog.birthDate}}
+        <strong>Birth Date:</strong> {{car.birthDate}}
       </p>
       <p>
-        <strong>Color:</strong> {{dog.color}}
+        <strong>Color:</strong> {{car.color}}
       </p>
       <p>
-        <strong>Size:</strong> {{dog.size}}
+        <strong>Size:</strong> {{car.size}}
       </p>
       <p>
-        <strong>Description:</strong> {{dog.description}}
+        <strong>Description:</strong> {{car.description}}
       </p>
     </div>
   </div>

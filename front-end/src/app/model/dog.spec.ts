@@ -1,7 +1,7 @@
-import { Dog } from './dog';
+import { Car} from './car';
 
-describe('Dog', () => {
+describe('Car', () => {
   it('should create an instance', () => {
-    expect(new Dog()).toBeTruthy();
+    expect(new Car()).toBeTruthy();
   });
 });

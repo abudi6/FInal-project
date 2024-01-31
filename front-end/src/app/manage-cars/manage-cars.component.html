@@ -1,0 +1,55 @@
+<div class="header-img">
+  <img src="assets/icons/MANAGE DOGS.png" style = "margin:15px;height:30px;">
+</div>
+
+<div class="centered">
+  
+  <div class="search-bar">
+    <input type="text" placeholder="Search by" [(ngModel)]="searchQuery" class="rounded-input" />
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'name'" />
+      Name
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'color'" />
+      Color
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'size'" />
+      Size
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'status'" />
+      Status
+    </label>
+    <button (click)="applyFilter()" class="search-button">Search</button>
+    <button (click)="navigateToAddCar()" class="add-button">Add Car</button>
+  </div>
+</div>
+
+<div class="table-container">
+  <table class="car-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Brand</th>
+        <th>Age</th>
+        <th>Color</th>
+        <th>Rent Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars" (click)="navigateToCarDetails(car)">
+        <td>{{ car.name }}</td>
+        <td>{{ car.size }}</td>
+        <td>{{ car.brand }}</td>
+        <td>{{ car.age }} months</td>
+        <td>{{ car.color }}</td>
+        <td>{{ car.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

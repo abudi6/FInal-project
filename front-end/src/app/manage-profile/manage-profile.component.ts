@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { Adopter } from '../model/adopter';
+import { Customer } from '../model/customer';
 
 @Component({
   selector: 'app-manage-profile',
@@ -8,8 +8,8 @@ import { Adopter } from '../model/adopter';
   styleUrls: ['./manage-profile.component.css']
 })
 export class ManageProfileComponent implements OnInit {
-  adopter: Adopter = new Adopter();
-  @Input() selectedAdopter: Adopter = new Adopter();
+  customer: Customer = new Customer();
+  @Input() selectedCustomer: Customer = new Customer();
   newDisplayImage: File | undefined = undefined;
   editMode: boolean = false;
 
@@ -20,16 +20,16 @@ export class ManageProfileComponent implements OnInit {
     const userId = localStorage.getItem('userId');
 
     if (userId) {
-      this.http.get(`http://localhost:18080/api/adopter/get-adopter/id/${userId}`)
+      this.http.get(`http://localhost:18080/api/customer/get-customer/id/${userId}`)
         .subscribe((data: any) => {
-          this.adopter = data; 
-          this.loadAdopterDetails();
+          this.customer = data; 
+          this.loadCustomerDetails();
         });
     }
   }
 
-  loadAdopterDetails(){
-    this.selectedAdopter = this.adopter;
+  loadCustomerDetails(){
+    this.selectedCustomer = this.customer;
   }
 
   onFileSelected(event: any) {
@@ -42,22 +42,22 @@ export class ManageProfileComponent implements OnInit {
   };
 
   saveChanges() {
-    const updatedAdopter = {
-      id: this.selectedAdopter.id,
-      firstName: this.selectedAdopter.firstName,
-      lastName: this.selectedAdopter.lastName,
-      displayImage: this.selectedAdopter.displayImage,
-      email: this.selectedAdopter.email,
-      password: this.selectedAdopter.password,
-      phoneNumber: this.selectedAdopter.phoneNumber,
-      homeAddress: this.selectedAdopter.homeAddress
+    const updatedCustomer = {
+      id: this.selectedCustomer.id,
+      firstName: this.selectedCustomer.firstName,
+      lastName: this.selectedCustomer.lastName,
+      displayImage: this.selectedCustomer.displayImage,
+      email: this.selectedCustomer.email,
+      password: this.selectedCustomer.password,
+      phoneNumber: this.selectedCustomer.phoneNumber,
+      homeAddress: this.selectedCustomer.homeAddress
     }
 
     if (this.newDisplayImage){
-      updatedAdopter.displayImage = this.newDisplayImage.name;
+      updatedCustomer.displayImage = this.newDisplayImage.name;
     }
 
-    this.http.put(`http://localhost:18080/api/adopter/update-adopter/${updatedAdopter.id}`, updatedAdopter)
+    this.http.put(`http://localhost:18080/api/customer/update-customer/${updatedCustomer.id}`, updatedCustomer)
       .subscribe(
         (response:any) => {
           this.toggleEditMode(); 

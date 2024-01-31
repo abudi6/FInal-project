@@ -17,7 +17,7 @@ export class LoginComponent {
   constructor(private http: HttpClient, private router: Router, private authService:AuthService) {}
 
   onLoginSubmit() {
-    this.http.post('http://localhost:18080/api/adopter/login', this.loginRequest).subscribe(
+    this.http.post('http://localhost:18080/api/customer/login', this.loginRequest).subscribe(
       (response: any) => {
         this.loginMessage = response.message;
         if (response.message === 'Login successful') {

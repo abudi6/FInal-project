@@ -1,0 +1,38 @@
+<div class="header-img">
+  <img src="assets/icons/MANAGE CUSTOMER DETAILS.png" style = "margin:25px;height:30px;">
+</div>
+
+<div class="box-container">
+  <div class="customer-details">
+    <img [src]="'assets/user-displayimages/' + selectedCustomer.displayImage" alt="{{ selectedCustomer.fullName }}" class="customer-image">
+    <div class="customer-info">
+      <p>
+        <strong>First Name:</strong> <input [(ngModel)]="selectedCustomer.firstName" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Last Name:</strong> <input [(ngModel)]="selectedCustomer.lastName" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Display Image:</strong> <input type="file" [(ngModel)]="newDisplayImage" (change)="onFileSelected($event)" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Email Address:</strong> <input [(ngModel)]="selectedCustomer.email" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Password:</strong> <input [(ngModel)]="selectedCustomer.password" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Phone Number:</strong> <input [(ngModel)]="selectedCustomer.phoneNumber" [disabled]="!editMode" style="width: 100%;" />
+      </p>
+      <p>
+        <strong>Home Address:</strong> <textarea [(ngModel)]="selectedCustomer.homeAddress" [disabled]="!editMode" style="width: 100%;"></textarea>
+      </p>
+      <div>
+        <button *ngIf="editMode" (click)="saveChanges()">Save Changes</button>
+        <button (click)="toggleEditMode()">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+        <button (click)="deleteRecord()">Delete</button>
+        <button routerLink="/manage-customers">Back</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="header-img">
+  <img src="assets/icons/MANAGE CUSTOMERS.png" style = "margin:15px;height:30px;">
+</div>
+<div class="centered">
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search by" [(ngModel)]="searchQuery" class="rounded-input"/>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'fullName'" />
+      Name
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'email'" />
+      Email
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="filterType" [value]="'phoneNumber'" />
+      Phone Number
+    </label>
+    <button (click)="applyFilter()" class="search-button">Search</button>  <button (click)="navigateToAddCustomer()" class="add-button">Add Customer</button>
+  </div>
+</div>
+
+
+<div class="table-container">
+  <table class="car-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customers" (click)="navigateToCustomerDetails(customer)">
+      <td>{{ customer.fullName }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phoneNumber }}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+  

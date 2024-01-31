@@ -5,7 +5,7 @@
 <div class="centered">
 
   <div class="table-container">
-    <table class="dog-table">
+    <table class="car-table">
       <thead>
         <tr>
           <th>ID</th>
@@ -14,7 +14,7 @@
           <th>Review Date</th>
           <th>Approval Date</th>
           <th>Applicant Name</th>
-          <th>Dog Name</th>
+          <th>Car Name</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +25,7 @@
           <td>{{ application.reviewDate | date:'short' }}</td>
           <td>{{ application.approvalDate | date:'short' }}</td>
           <td>{{ application.applicant.fullName }}</td>
-          <td>{{ application.dog.name }}</td>
+          <td>{{ application.car.name }}</td>
         </tr>
       </tbody>
     </table>

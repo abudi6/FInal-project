@@ -11,7 +11,7 @@ import { Application } from '../model/application';
 export class ManageApplicationDetailsComponent{
   @Input() selectedApplication: Application = new Application();
   applicant:any;
-  dog:any;
+  car:any;
   editMode: boolean = false;
   newDisplayImage: File | undefined = undefined;
   statusOptions: string[] = ['Submitted', 'Under Review', 'Approved'];
@@ -20,7 +20,7 @@ export class ManageApplicationDetailsComponent{
     this.route.params.subscribe((params) => {
       const applicationId = params['id'];
       if (applicationId) {
-        this.loadAdopterDetails(applicationId);
+        this.loadCustomerDetails(applicationId);
       }
     });
   }
@@ -37,12 +37,12 @@ export class ManageApplicationDetailsComponent{
     return null;
   }
 
-  loadAdopterDetails(applicationId: string) {
+  loadCustomerDetails(applicationId: string) {
     this.http.get<Application>(`http://localhost:18080/api/application/get-application/id/${applicationId}`).subscribe(
       (application: Application) => {
         this.selectedApplication = application;
         this.applicant = application.applicant;
-        this.dog = application.dog;
+        this.car = application.car;
       }
     );
   }

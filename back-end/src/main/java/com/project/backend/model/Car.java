@@ -13,8 +13,7 @@ import java.util.Date;
 @Table(name="car")
 public class Car {
     @Id
-    @GeneratedValue(generator = "custom-id", strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.CarIdGenerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String displayImage;
@@ -172,6 +171,6 @@ public class Car {
             years--;
         }
 
-        return years * 12 + months;
+        return years;
     }
 }

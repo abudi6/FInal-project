@@ -38,6 +38,14 @@ public class CarController {
     public List<Car> getCarsByBrand(@PathVariable String brand) {
         return carService.getCarsByBrand(brand);
     }
+    @GetMapping("/get-car/color/{color}")
+    public List<Car> getCarsByColor(@PathVariable String color) {
+        return carService.getCarsByColor(color);
+    }
+    @GetMapping("/get-car/size/{size}")
+    public List<Car> getCarsBySize(@PathVariable String size) {
+        return carService.getCarsByBrand(size);
+    }
     @GetMapping("/get-car/status/{status}")
     public List<Car> getCarsByStatus(@PathVariable String status) {
         return carService.getCarsByStatus(status);

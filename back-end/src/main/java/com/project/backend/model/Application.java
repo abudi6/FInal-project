@@ -11,8 +11,8 @@ import java.util.Date;
 @Table(name="application")
 public class Application {
     @Id
-    @GeneratedValue(generator = "custom-id", strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.ApplicationIdGenerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
     private String status;
     private LocalDateTime submittedDate;

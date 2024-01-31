@@ -1,5 +1,5 @@
-import { Adopter } from "./adopter"
-import { Dog } from "./dog"
+import { Customer } from "./customer"
+import { Car} from "./car"
 
 export class Application {
     id: number = 0
@@ -7,6 +7,6 @@ export class Application {
     submittedDate: Date | null = null
     reviewDate: Date | null = null
     approvalDate: Date | null = null
-    applicant: Adopter[] = []
-    dog: Dog[] = []
+    applicant: Customer[] = []
+    car: Car[] = []
 }

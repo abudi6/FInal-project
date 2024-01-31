@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Adopter } from '../model/adopter';
+import { Customer } from '../model/customer';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +9,7 @@ import { Adopter } from '../model/adopter';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  adopter: Adopter = new Adopter();
+  customer: Customer = new Customer();
   registerMessage: string = '';
   selectedImage: File | null = null;
 
@@ -18,7 +18,7 @@ export class RegisterComponent {
   onFileSelected(event: any) {
     this.selectedImage = event.target.files[0] as File;
     if (this.selectedImage) {
-      this.adopter.displayImage = this.selectedImage.name; // Store the file name as the address
+      this.customer.displayImage = this.selectedImage.name; // Store the file name as the address
     }
   }
   
@@ -26,7 +26,7 @@ export class RegisterComponent {
     alert("WOrking")
   }
   onRegisterSubmit(){
-    this.http.post('http://localhost:18080/api/adopter/register-adopter', this.adopter, { responseType: 'text' }).subscribe(
+    this.http.post('http://localhost:18080/api/customer/register-customer', this.customer, { responseType: 'text' }).subscribe(
       (response: string) => {
         this.registerMessage = response;
         if (response === 'Registration successful') {

@@ -12,8 +12,8 @@ import java.util.List;
 @Table(name="customer")
 public class Customer {
     @Id
-    @GeneratedValue(generator = "custom-id", strategy = GenerationType.IDENTITY)
-    @GenericGenerator(name = "custom-id", strategy = "com.project.backend.service.CustomerIdGenerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
     private String firstName;
     private String lastName;

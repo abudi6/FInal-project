@@ -10,19 +10,19 @@ import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
-import { ShowDogsComponent } from './show-dogs/show-dogs.component';
+import { ShowCarsComponent } from './show-cars/show-cars.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { ManageDogsComponent } from './manage-dogs/manage-dogs.component';
-import { ManageAdoptersComponent } from './manage-adopters/manage-adopters.component';
+import { ManageCarsComponent } from './manage-cars/manage-cars.component';
+import { ManageCustomersComponent } from './manage-customers/manage-customers.component';
 import { ManageApplicationsComponent } from './manage-applications/manage-applications.component';
-import { ShowDogDetailsComponent } from './show-dog-details/show-dog-details.component';
+import { ShowCarDetailsComponent } from './show-car-details/show-car-details.component';
 import { ShowApplicationsComponent } from './show-applications/show-applications.component';
 import { ShowApplicationDetailsComponent } from './show-application-details/show-application-details.component';
-import { AddDogComponent } from './add-dog/add-dog.component';
-import { ManageDogDetailsComponent } from './manage-dog-details/manage-dog-details.component';
-import { ManageAdopterDetailsComponent } from './manage-adopter-details/manage-adopter-details.component';
-import { AddAdopterComponent } from './add-adopter/add-adopter.component';
+import { AddCarComponent } from './add-car/add-car.component';
+import { ManageCarDetailsComponent } from './manage-car-details/manage-car-details.component';
+import { ManageCustomerDetailsComponent } from './manage-customer-details/manage-customer-details.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { ManageApplicationDetailsComponent } from './manage-application-details/manage-application-details.component';
 import { SupportPageComponent } from './support-page/support-page.component';
 import { ManageProfileComponent } from './manage-profile/manage-profile.component';
@@ -35,19 +35,19 @@ import { ManageProfileComponent } from './manage-profile/manage-profile.componen
     NavBarComponent,
     HomePageComponent,
     AboutPageComponent,
-    ShowDogsComponent,
+    ShowCarsComponent,
     LoginComponent,
     RegisterComponent,
-    ManageDogsComponent,
-    ManageAdoptersComponent,
+    ManageCarsComponent,
+    ManageCustomersComponent,
     ManageApplicationsComponent,
-    ShowDogDetailsComponent,
+    ShowCarDetailsComponent,
     ShowApplicationsComponent,
     ShowApplicationDetailsComponent,
-    AddDogComponent,
-    ManageDogDetailsComponent,
-    ManageAdopterDetailsComponent,
-    AddAdopterComponent,
+    AddCarComponent,
+    ManageCarDetailsComponent,
+    ManageCustomerDetailsComponent,
+    AddCustomerComponent,
     ManageApplicationDetailsComponent,
     SupportPageComponent,
     ManageProfileComponent

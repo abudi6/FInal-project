@@ -1,0 +1,20 @@
+<div class="car-details">
+  <h1><strong>Car Details          </strong> <button routerLink="/show-cars">Back</button></h1>
+  <div class="car-info">
+    <h3>{{ selectedCar.name }}</h3>
+    <div class="pics">
+      <img [src]="'assets/car-displayimages/' + selectedCar.displayImage" alt="{{ selectedCar.name }}" class="car-image">
+    </div>
+    <div class="other">
+      <p><strong>Brand:</strong> {{ selectedCar.brand }}</p>
+      <p><strong>Manufacturing Date:</strong> {{ selectedCar.manuDate | date:'shortDate' }}</p>
+      <p><strong>Age:</strong> {{ selectedCar.age }} months</p>
+      <p><strong>Rent Status:</strong> {{ selectedCar.status }}</p>
+      <p><strong>Color:</strong> {{ selectedCar.color }}</p>
+      <p><strong>Size:</strong> {{ selectedCar.size }}</p>
+      
+    </div>
+    <p class="description"><strong>Description:</strong> {{ selectedCar.description }}</p>
+    <button (click)="adoptCar(selectedCar)">Submit Application</button>
+  </div>
+</div>
