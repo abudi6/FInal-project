@@ -72,7 +72,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"ofclmekarox@gmail.com\",\r\n    \"name\":\"Nicanor Pineda III\",\r\n    \"password\":\"080203\"\r\n}",
+							"raw": "{\r\n    \"email\":\"Azzouni@gmail.com\",\r\n    \"name\":\"Abdulrahman AlAzzouni\",\r\n    \"password\":\"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -132,7 +132,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/admin/get-admin/email/kulitnick@gmail.com",
+							"raw": "http://localhost:18080/api/admin/get-admin/email/azzouni@gmail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -156,7 +156,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"kulitnick@gmail.com\",\r\n    \"password\":\"080203\"\r\n}",
+							"raw": "{\r\n    \"email\": \"azzouni@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -494,29 +494,7 @@
 					},
 					"response": []
 				},
-				{
-					"name": "GetCarsByGender",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:18080/api/car/get-car/gender/Male",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "18080",
-							"path": [
-								"api",
-								"car",
-								"get-car",
-								"gender",
-								"Male"
-							]
-						}
-					},
-					"response": []
-				},
+				
 				{
 					"name": "GetCarsByStatus",
 					"request": {

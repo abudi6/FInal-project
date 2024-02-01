@@ -1,6 +1,69 @@
-div{
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header container styles */
+.header-container {
+    background-color: #007bff;
+    color: #007bff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header-container img {
+    height: 60px;
+}
+
+/* Main content container styles */
+main {
+    padding: 20px;
+}
+
+/* Mission container styles */
+.mission-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.mission-container h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Why Choose Us container styles */
+.why-choose-us-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.why-choose-us-container h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.why-choose-us-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.why-choose-us-container p {
+    margin-bottom: 15px;
 }
