@@ -1,7 +1,7 @@
 <div class="login-container">
   <div class="form-container">
     <form *ngIf="switchLoginForm" (ngSubmit)="onLoginSubmit()">
-      <img src="assets/icons/icons8-dog-heart-100.png" alt="Dog Owner Image" style = "margin:-4px; height:60px"><br>
+      <img src="assets/icons/icons8-car-heart-100.png" alt="Dog Owner Image" style = "margin:-4px; height:60px"><br>
       <img src="assets/icons/Group 3.png" style = "margin-top:25px; margin-bottom: -10px; height:60px">
       <div>
         <label for="email">Email:</label>
@@ -21,7 +21,7 @@
     </form>
 
     <form *ngIf="!switchLoginForm" (ngSubmit)="onAdminLoginSubmit()">
-      <img src="assets/icons/icons8-dog-heart-100.png" alt="Dog Owner Image" style = "margin:-4px; height:60px"><br>
+      <img src="assets/icons/icons8-car-heart-100.png" alt="Dog Owner Image" style = "margin:-4px; height:60px"><br>
       <img src="assets/icons/Group 3.png" style = "margin-top:25px; margin-bottom: -10px; height:60px">
       <div>
         <label for="email">Email:</label>
@@ -32,7 +32,7 @@
         <input type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required>
       </div>
       <div style="margin:10px;">
-        <a (click)="toggleFormVisibility()">{{ switchLoginForm ? 'Are you an Admin? Sign in here' : 'Are you an Adopter? Sign in here' }}</a>
+        <a (click)="toggleFormVisibility()">{{ switchLoginForm ? 'Are you an Admin? Sign in here' : 'Are you a Customer? Sign in here' }}</a>
       </div>
       <div>
         <button type="submit">LOGIN</button>

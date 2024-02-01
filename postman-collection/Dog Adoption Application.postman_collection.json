@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "424fa75c-bac4-4b01-a2eb-ac879e56af4f",
-		"name": "Dog Adoption Application",
+		"name": "Car Adoption Application",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "28141266",
 		"_collection_link": "https://lively-resonance-31385.postman.co/workspace/Open-Workspace~14b8839e-4be0-494d-b51a-69e16c8d7181/collection/28141266-424fa75c-bac4-4b01-a2eb-ac879e56af4f?action=share&source=collection_link&creator=28141266"
@@ -182,15 +182,15 @@
 			]
 		},
 		{
-			"name": "Adopter",
+			"name": "Customer",
 			"item": [
 				{
-					"name": "GetAllAdopters",
+					"name": "GetAllCustomers",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/all-adopter",
+							"raw": "http://localhost:18080/api/customer/all-customer",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -198,20 +198,20 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
-								"all-adopter"
+								"customer",
+								"all-customer"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GetAdopterById",
+					"name": "GetCustomerById",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/get-adopter/id/1",
+							"raw": "http://localhost:18080/api/customer/get-customer/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -219,8 +219,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
-								"get-adopter",
+								"customer",
+								"get-customer",
 								"id",
 								"1"
 							]
@@ -229,7 +229,7 @@
 					"response": []
 				},
 				{
-					"name": "GetAdopterByName",
+					"name": "GetCustomerByName",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -246,7 +246,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/get-adopter/name/a",
+							"raw": "http://localhost:18080/api/customer/get-customer/name/a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -254,8 +254,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
-								"get-adopter",
+								"customer",
+								"get-customer",
 								"name",
 								"a"
 							]
@@ -264,12 +264,12 @@
 					"response": []
 				},
 				{
-					"name": "GetAdopterByEmail",
+					"name": "GetCustomerByEmail",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/get-adopter/email/childe",
+							"raw": "http://localhost:18080/api/customer/get-customer/email/childe",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -277,8 +277,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
-								"get-adopter",
+								"customer",
+								"get-customer",
 								"email",
 								"childe"
 							]
@@ -287,12 +287,12 @@
 					"response": []
 				},
 				{
-					"name": "GetAdopterByPhone",
+					"name": "GetCustomerByPhone",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/get-adopter/phone/0919",
+							"raw": "http://localhost:18080/api/customer/get-customer/phone/0919",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -300,8 +300,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
-								"get-adopter",
+								"customer",
+								"get-customer",
 								"phone",
 								"0919"
 							]
@@ -310,7 +310,7 @@
 					"response": []
 				},
 				{
-					"name": "RegisterAdopter",
+					"name": "RegisterCustomer",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -324,7 +324,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/register-adopter",
+							"raw": "http://localhost:18080/api/customer/register-customer",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -332,15 +332,15 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
-								"register-adopter"
+								"customer",
+								"register-customer"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "UpdateAdopter",
+					"name": "UpdateCustomer",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -354,7 +354,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/update-adopter/1",
+							"raw": "http://localhost:18080/api/customer/update-customer/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -362,8 +362,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
-								"update-adopter",
+								"customer",
+								"update-customer",
 								"1"
 							]
 						}
@@ -371,12 +371,12 @@
 					"response": []
 				},
 				{
-					"name": "DeleteAdopter",
+					"name": "DeleteCustomer",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/delete-adopter/6",
+							"raw": "http://localhost:18080/api/customer/delete-customer/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -384,8 +384,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
-								"delete-adopter",
+								"customer",
+								"delete-customer",
 								"6"
 							]
 						}
@@ -393,7 +393,7 @@
 					"response": []
 				},
 				{
-					"name": "LoginAsAdopter",
+					"name": "LoginAsCustomer",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -407,7 +407,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:18080/api/adopter/login",
+							"raw": "http://localhost:18080/api/customer/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -415,7 +415,7 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"adopter",
+								"customer",
 								"login"
 							]
 						}
@@ -425,15 +425,15 @@
 			]
 		},
 		{
-			"name": "Dog",
+			"name": "Car",
 			"item": [
 				{
-					"name": "GetAllDogs",
+					"name": "GetAllCars",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/dog/all-dog",
+							"raw": "http://localhost:18080/api/car/all-car",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -441,20 +441,20 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"dog",
-								"all-dog"
+								"car",
+								"all-car"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GetDogById",
+					"name": "GetCarById",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/dog/get-dog/id/1",
+							"raw": "http://localhost:18080/api/car/get-car/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -462,8 +462,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"dog",
-								"get-dog",
+								"car",
+								"get-car",
 								"id",
 								"1"
 							]
@@ -472,12 +472,12 @@
 					"response": []
 				},
 				{
-					"name": "GetDogsByName",
+					"name": "GetCarsByName",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/dog/get-dog/name/B",
+							"raw": "http://localhost:18080/api/car/get-car/name/B",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -485,8 +485,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"dog",
-								"get-dog",
+								"car",
+								"get-car",
 								"name",
 								"B"
 							]
@@ -495,12 +495,12 @@
 					"response": []
 				},
 				{
-					"name": "GetDogsByGender",
+					"name": "GetCarsByGender",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/dog/get-dog/gender/Male",
+							"raw": "http://localhost:18080/api/car/get-car/gender/Male",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -508,8 +508,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"dog",
-								"get-dog",
+								"car",
+								"get-car",
 								"gender",
 								"Male"
 							]
@@ -518,12 +518,12 @@
 					"response": []
 				},
 				{
-					"name": "GetDogsByStatus",
+					"name": "GetCarsByStatus",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/dog/get-dog/status/Open",
+							"raw": "http://localhost:18080/api/car/get-car/status/Open",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -531,8 +531,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"dog",
-								"get-dog",
+								"car",
+								"get-car",
 								"status",
 								"Open"
 							]
@@ -541,7 +541,7 @@
 					"response": []
 				},
 				{
-					"name": "RegisterDog",
+					"name": "RegisterCar",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -555,7 +555,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:18080/api/dog/register-dog",
+							"raw": "http://localhost:18080/api/car/register-car",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -563,15 +563,15 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"dog",
-								"register-dog"
+								"car",
+								"register-car"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "UpdateDog",
+					"name": "UpdateCar",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -585,7 +585,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:18080/api/dog/update-dog/1",
+							"raw": "http://localhost:18080/api/car/update-car/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -593,8 +593,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"dog",
-								"update-dog",
+								"car",
+								"update-car",
 								"1"
 							]
 						}
@@ -602,12 +602,12 @@
 					"response": []
 				},
 				{
-					"name": "DeleteDog",
+					"name": "DeleteCar",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/dog/delete-dog/10",
+							"raw": "http://localhost:18080/api/car/delete-car/10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -615,8 +615,8 @@
 							"port": "18080",
 							"path": [
 								"api",
-								"dog",
-								"delete-dog",
+								"car",
+								"delete-car",
 								"10"
 							]
 						}
@@ -650,12 +650,12 @@
 					"response": []
 				},
 				{
-					"name": "GetApplicationByDog",
+					"name": "GetApplicationByCar",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:18080/api/application/get-application/dog/Max",
+							"raw": "http://localhost:18080/api/application/get-application/car/Max",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -665,7 +665,7 @@
 								"api",
 								"application",
 								"get-application",
-								"dog",
+								"car",
 								"Max"
 							]
 						}
@@ -725,7 +725,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"applicant\":{\r\n        \"id\":1\r\n    },\r\n    \"dog\":{\r\n        \"id\":1\r\n    }\r\n}",
+							"raw": "{\r\n    \"applicant\":{\r\n        \"id\":1\r\n    },\r\n    \"car\":{\r\n        \"id\":1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
