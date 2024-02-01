@@ -4,11 +4,12 @@
   align-items: center;
   height: 90vh;
   background-color: transparent;
-  background-image: url('src/assets/icons/dog-family-png-11.png');
   background-repeat: no-repeat;
   background-position: center center; 
   background-size: 60%;
   margin-top:-20px;
+  animation: fade-in 1s ease-in-out;
+
 }
 
 .form-container {

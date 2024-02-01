@@ -6,12 +6,16 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  animation: fade-in 1s ease-in-out;
+
 }
 .centered {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 15px;
+  animation: fade-in 1s ease-in-out;
+
 }
 
 .rounded-input {
@@ -20,6 +24,8 @@
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
   width: 200px;
+  animation: fade-in 1s ease-in-out;
+
 }
 
 .search-bar label {
@@ -52,11 +58,15 @@
   margin: 0 auto; /* Center the table container */
   width: 70%; /* Adjust the width as needed */
   margin-bottom: 50px;
+  animation: fade-in 1s ease-in-out;
+
 }
 
 .car-table {
   border-collapse: collapse;
   width: 100%; /* Adjust the width as needed */
+  animation: fade-in 1s ease-in-out;
+
 }
 
 .car-table th,

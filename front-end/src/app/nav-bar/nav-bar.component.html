@@ -2,7 +2,7 @@
 <body>
     <ul class="navbar">
         <li class="nav-item logo-item">
-            <img [src]="'assets/icons/logo.png'" alt="Logo" width="200">
+            <img [src]="'assets/icons/logo.png'" alt="Logo" width="130">
         </li>
         <li class="nav-item">
             <a class="nav-link button" routerLink="/home-page" routerLinkActive="active">WELCOME</a>
@@ -29,7 +29,7 @@
         </li>
         
         <li class="nav-item" *ngIf="isUserLoggedIn">
-            <a class="nav-link button" routerLink="/show-cars" routerLinkActive="active">APPLY RENT</a>
+            <a class="nav-link button" routerLink="/show-cars" routerLinkActive="active">APPLY RENTAL</a>
         </li>
 
         <li class="nav-item" *ngIf="isUserLoggedIn">
