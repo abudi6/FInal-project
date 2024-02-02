@@ -17,8 +17,19 @@
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 400px;
+    animation: fade-in 1s ease-in-out;
+
   }
-  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   h2 {
     color: #C05E4B;
     font-family: 'Montserrat', sans-serif;

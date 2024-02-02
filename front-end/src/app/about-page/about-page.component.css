@@ -4,6 +4,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    animation: fade-in 1s ease-in-out;
+
 }
 
 .container {
@@ -17,11 +19,12 @@ body {
     background-color: #007bff;
     color: #007bff;
     text-align: center;
+    
     padding: 20px 0;
 }
 
 .header-container img {
-    height: 60px;
+    height: 90px;
 }
 
 /* Main content container styles */
@@ -36,8 +39,19 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-}
+    animation: fade-in 1s ease-in-out;
 
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .mission-container h2 {
     color: #333;
     font-size: 24px;
@@ -50,6 +64,8 @@ main {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fade-in 1s ease-in-out;
+
 }
 
 .why-choose-us-container h2 {
